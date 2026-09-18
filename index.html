@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EKSODUS WANDER INDONESIA</title>
+<style>
+:root{--biru:#1e3a8b;--biru-muda:#38bdf8;--maroon:#7c2d12;--merah:#991b1b;--kuning:#facc15;--kuning2:#eab308;--hijau:#16a34a;--hijau2:#15803d;--orange:#ea580c;--orange2:#c2410c;--bg:#f5f5f5;--card:#fff;--text:#111;--abu:#888;--admin-bg:#f3f4f6}
+body.dark{--bg:#1a1a1a;--card:#2d2d2d;--text:#eee;--admin-bg:#1f2937}body.red{--biru:#991b1b;--biru-muda:#fbbf24}body.green{--biru:#166534;--biru-muda:#4ade80}*{box-sizing:border-box}
+body{margin:0;font-family:Arial;background:var(--bg);color:var(--text);scroll-behavior:smooth}
+header{background:var(--biru);color:var(--biru-muda);padding:10px 20px;display:flex;align-items:center;gap:16px;border-bottom:3px solid var(--biru-muda);position:sticky;top:0;z-index:10;flex-wrap:wrap}
+header img{height:40px}.brand{flex:1;min-width:220px}.brand b{font-size:18px}.badge{background:#fff;color:var(--biru);font-size:12px;padding:2px 8px;border-radius:12px;font-weight:700;white-space:nowrap}.badge.expired{background:#dc2626;color:#fff}
+nav{display:flex;gap:8px;align-items:center;flex-wrap:nowrap}nav a,nav select{background:var(--merah);color:#fff;text-decoration:none;padding:8px 14px;border-radius:20px;font-weight:700;border:none;font-size:14px;cursor:pointer;white-space:nowrap}
+section{max-width:1200px;margin:auto;padding:30px 20px}h2{text-align:center;color:var(--maroon);font-size:28px;margin-bottom:20px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--card);border-radius:12px;overflow:hidden;box-shadow:0 4px 12px #0001;border-top:4px solid var(--maroon);position:relative;padding:0;text-align:center}.card img{width:100%;height:180px;object-fit:cover;display:block}.card-content{padding:16px;text-align:left}.diskon-badge{position:absolute;top:12px;left:12px;background:#ef4444;color:#fff;font-size:11px;font-weight:800;padding:4px 10px;border-radius:20px;z-index:2}.card h3{color:var(--maroon);font-size:18px;margin:12px 0 4px}.card.lokasi{color:#555;font-size:13px;margin-bottom:8px}.card.desc{color:#444;font-size:14px;min-height:60px}.harga-coret{text-decoration:line-through;color:var(--abu);font-size:13px}
+.slider-wrapper{width:100%;overflow:hidden;}.slider-track{display:flex!important;gap:16px!important;width:100%!important;will-change:transform;}.slider-track.card{width:calc((100% - 48px) / 4)!important;min-width:calc((100% - 48px) / 4)!important;flex-shrink:0!important;box-sizing:border-box!important;}
+#booking{background-color:#fbfbf8!important;padding:65px 20px!important;}.form-booking{background-color:#435824!important;border:3px solid #dfa932!important;border-radius:24px!important;padding:35px!important;}
+.harga-promo{color:#dc2626;font-weight:800;font-size:20px;margin:8px 0}.btn-pilih{background:linear-gradient(180deg,var(--kuning),var(--kuning2));color:#111;width:100%;font-weight:800;padding:12px;border-radius:8px}
+input,textarea,select{width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;margin-top:6px;background:var(--card);color:var(--text)}
+button{cursor:pointer;border:none;border-radius:8px;padding:10px 16px;background:var(--biru);color:#fff;font-weight:700}button.small{padding:6px 10px;font-size:12px}
+.modal{position:fixed;inset:0;background:#0007;display:none;align-items:center;justify-content:center;z-index:20;padding:20px}.modal>div{background:var(--admin-bg);padding:0;border-radius:12px;max-width:1000px;width:100%;max-height:90vh;overflow:auto;border-top:3px solid var(--maroon)}
+.admin-tabs{display:flex;gap:8px;justify-content:center;padding:0 16px 16px;flex-wrap:wrap}.tab-btn{padding:8px 14px;border-radius:10px;font-weight:700;font-size:13px;display:flex;align-items:center;gap:6px;border-bottom:3px solid transparent}.tab-btn.active{border-bottom:3px solid var(--maroon)}.tab-kuning{background:var(--kuning);color:#111}.tab-hijau{background:var(--hijau);color:#fff}.tab-orange{background:var(--orange);color:#fff}.tab-biru{background:var(--biru);color:#fff}
+.admin-body{background:#fff;border-radius:12px;margin:0 16px 16px;padding:16px;color:#111;min-height:400px}.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.btn-simpan{background:var(--kuning);color:#111;width:100%;margin-top:12px;font-weight:800}.btn-whatsapp{background:var(--kuning);color:#111;width:100%;margin-top:12px;font-weight:800;font-size:16px}
+table{width:100%;border-collapse:collapse;font-size:14px;margin-top:16px}th{background:var(--maroon);color:#fff;padding:10px;text-align:left}td{border-bottom:1px solid #e5e7eb;padding:8px;text-align:left;vertical-align:middle}.hidden{display:none}.thumb{width:60px;height:40px;object-fit:cover;border-radius:6px}.flex{display:flex;gap:8px;align-items:center}.btn-edit{background:#3b82f6;color:#fff;padding:6px 10px;font-size:12px}.btn-hapus{background:#dc2626;color:#fff;padding:6px 10px;font-size:12px}
+.form-wrap{display:grid;grid-template-columns:2fr 1fr;gap:20px;max-width:1100px;margin:auto}.form-booking h2,.form-testi h2{text-align:center;color:var(--maroon);margin-bottom:8px;font-size:20px}.label-merah{color:var(--maroon);font-weight:700;font-size:14px}.jumlah-testi{text-align:center;color:var(--maroon);font-size:13px;margin:-10px 0 12px;font-weight:700}
+.preview{width:120px;height:80px;object-fit:cover;border-radius:8px;border:2px solid #dfa932;display:none;margin-top:8px}.info{font-size:11px;color:#555;margin-top:4px;text-align:left}
+@media(max-width:768px){.grid{grid-template-columns:1fr}.grid-3,.grid-2{grid-template-columns:1fr}header{flex-direction:column;align-items:center}nav{justify-content:center;width:100%}}
+/* DETAIL + PRO BEB */
+.btn-detail{background:#fff;color:var(--maroon);border:2px solid var(--maroon)!important;width:100%;font-weight:800;padding:10px;border-radius:8px;margin-bottom:8px}
+.btn-row{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+#detailModal{position:fixed;inset:0;background:rgba(0,0,0,0.75);display:none;align-items:center;justify-content:center;z-index:9998;padding:15px}
+#detailCard{background:#fff;border-radius:20px;max-width:480px;width:100%;max-height:90vh;overflow-y:auto}
+#detailCard img{width:100%;height:260px;object-fit:cover;border-radius:20px 20px 0 0}
+#detailBody{padding:20px;text-align:left}
+#dDesc{color:#333;font-size:14px;line-height:1.6;white-space:pre-wrap;background:#f9f9f9;padding:12px;border-radius:10px;border:1px solid #eee;max-height:250px;overflow-y:auto;margin-bottom:14px}
+#expiredOverlay{position:fixed;inset:0;background:rgba(17,25,40,0.97);z-index:99999;display:none;align-items:center;justify-content:center;padding:20px}
+</style>
+</head>
+<body>
+//<header>
+    <img src="./eksodus.png" alt="logo" style="height:40px;background:#fff;border-radius:8px;padding:3px;object-fit:contain;">
+    <div class="brand"><b>EKSODUS WANDER INDONESIA</b><br><span class="badge" id="trialBadge">LOADING TRIAL...</span></div><nav><a href="#paket">Paket</a><a href="#gallery">Gallery</a><a href="#booking">Booking</a><a href="#testi">Testimoni</a><a href="#" onclick="openAdmin()">👑 ADMIN PANEL</a><select onchange="setTheme(this.value)"><option value="red">Tema Merah</option><option value="dark">Tema Gelap</option><option value="" selected>Tema Biru</option><option value="green">Tema Hijau</option></select></nav></header>
+
+<section id="gallery"><h1 style="font-size:32px;font-weight:900;color:#0a0118d8;margin:0 0 15px 0;width:100%;text-align:center;">PRIVATE TOUR & DRIVER BALI</h1><p style="font-size:14px;color:#b30d1bf1;max-width:650px;margin:0 auto 25px auto;line-height:1.6;text-align:center;">Eksplorasi keindahan alam, budaya, dan destinasi eksotis di Bali bersama driver profesional, armada mobil premium yang nyaman, dan layanan terpercaya.</p><div class="slider-wrapper"><div class="slider-track" id="sliderTrack"></div></div></section>
+
+<section id="paket"><div style="display:flex;justify-content:space-between;align-items:center;width:100%;margin-bottom:20px;gap:15px;flex-wrap:wrap;"><h2 style="margin:0;">PAKET TOUR BALI</h2><div style="position:relative;min-width:250px;"><select id="kategoriFilter" style="width:100%;padding:10px 15px;border:2px solid #b30d1b;border-radius:8px;font-size:14px;outline:none;box-sizing:border-box;background-color:white;cursor:pointer;"><option value="">Semua Kategori</option></select></div></div><div class="grid" id="paketGrid"></div></section>
+
+<section id="booking"><h2 style="text-align:center!important;display:block!important;width:100%!important;margin:20px auto 35px auto!important;">BOOKING & TESTIMONI</h2><div class="form-wrap"><div class="form-booking card" style="background-color:#435824!important;border:3px solid #dfa932!important;border-radius:24px!important;padding:35px!important;"><h2 style="color:#ffffff!important;">FORMULIR PEMESAN TIKET TOUR</h2><input id="bNama" placeholder="Nama Lengkap Anda *"><input id="bWa" placeholder="Nomor WhatsApp Aktif *"><select id="bPaket"></select><input type="date" id="bTgl"><input type="number" id="bJumlah" value="1" placeholder="Jumlah Peserta"><div class="grid-2"><div><label class="label-merah">Asal Negara</label><select id="bNegara"></select></div><div><label class="label-merah">Preferensi Bahasa Driver</label><select id="bBahasa"></select></div></div><input id="bEmail" placeholder="Alamat Email"><textarea id="bCatatan" placeholder="Catatan khusus..."></textarea><div style="display:flex;gap:12px;margin-top:15px;width:100%;"><button class="btn-whatsapp" onclick="kirimWa()" style="flex:1;margin:0!important;width:auto!important;">💬 KIRIM VIA WHATSAPP</button><button type="button" onclick="kirimEmail()" style="flex:1;background-color:#dfa932;color:#1e3f20;border:none;padding:12px;font-weight:bold;border-radius:4px;cursor:pointer;">✉️ KIRIM VIA EMAIL</button></div></div><div class="form-testi card" style="background-color:#fdfae7!important;border:3px solid #dfa932!important;border-radius:24px!important;padding:35px!important;"><h2 style="color:#2c2519!important;">KIRIM TESTIMONI ★</h2><div class="jumlah-testi" id="jumlahTesti" style="color:#8d795a!important;font-weight:bold;margin-bottom:10px;">Sudah 0 orang berbagi pengalaman</div><input type="text" id="tNama" placeholder="Nama Anda"><label class="label-merah" style="margin-top:8px;display:block;color:#2c2519!important;font-weight:bold;">Rating Anda:</label><div class="stars" id="starRating" style="display:flex;gap:8px;justify-content:center;font-size:32px;margin:15px 0;"><span class="star-click" data-val="1" style="cursor:pointer;color:#16a34a!important;">★</span><span class="star-click" data-val="2" style="cursor:pointer;color:#16a34a!important;">★</span><span class="star-click" data-val="3" style="cursor:pointer;color:#16a34a!important;">★</span><span class="star-click" data-val="4" style="cursor:pointer;color:#16a34a!important;">★</span><span class="star-click" data-val="5" style="cursor:pointer;color:#16a34a!important;">★</span></div><input type="hidden" id="tBintang" value="5"><textarea id="tPesan" placeholder="Ceritakan pengalamanmu..." rows="6"></textarea><button class="btn-simpan" onclick="saveTesti()">KIRIM TESTIMONI</button></div></div></section>
+
+<section id="testi"><h2>APA KATA MEREKA</h2><div class="grid" id="testiGrid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))"></div></section>
+
+<!-- MODAL DETAIL BEB -->
+<div id="detailModal" onclick="closeDetail()"><div id="detailCard" onclick="event.stopPropagation()"><img id="dImg" src=""><div id="detailBody"><h2 id="dNama" style="color:#7c2d12;margin:0 0 8px"></h2><div id="dKategori" style="color:#555;font-size:13px"></div><div id="dCoret" style="text-decoration:line-through;color:#888;font-size:13px"></div><div id="dHarga" style="color:#dc2626;font-weight:800;font-size:22px;margin:6px 0 12px"></div><div id="dDesc"></div><div class="btn-row"><button class="btn-pilih" onclick="pilihDariDetail()">PILIH PAKET INI</button><button class="btn-detail" onclick="closeDetail()">TUTUP</button></div></div></div></div>
+
+<!-- OVERLAY TRIAL + PRO BEB -->
+<div id="expiredOverlay"><div style="background:#fff;color:#111;border-radius:20px;padding:30px 25px;max-width:420px;width:100%;border:4px solid #dc2626;text-align:center"><div style="font-size:50px">🔒</div><h1 style="color:#dc2626;margin:10px 0;font-size:26px">TRIAL EXPIRED</h1><p style="color:#555;font-size:13px">Masa trial habis Beb. Masukkan Kode PRO Beb.</p><div id="expiredDateInfo" style="background:#fee2e2;color:#991b1b;padding:8px;border-radius:8px;font-weight:bold;font-size:12px;margin:10px 0"></div><div style="background:#f3f4f6;padding:15px;border-radius:12px;border:2px dashed #dfa932;text-align:left"><b style="font-size:12px">🔑 KODE AKTIVASI PRO:</b><input id="proKeyInput" placeholder="EKSODUS-PRO-2026-BALI" style="margin-top:8px;border:2px solid #16a34a!important;text-transform:uppercase;font-weight:bold;text-align:center"><button onclick="activatePro()" style="width:100%;background:#16a34a;color:#fff;margin-top:10px;padding:12px;font-weight:800;border-radius:8px">🚀 AKTIVASI PRO</button><div id="keyInfo" style="font-size:11px;color:#555;margin-top:8px;text-align:center">Kode tes: <b>EKSODUS-PRO-2026-BALI</b></div></div><a href="https://wa.me/6281236801953?text=Halo%20mau%20beli%20kode%20PRO" target="_blank" style="display:block;margin-top:12px;background:#fff;color:#16a34a;border:2px solid #16a34a;padding:10px;border-radius:10px;text-decoration:none;font-weight:800;font-size:13px">💬 BELI KODE PRO</a></div></div>
+
+<div class="modal" id="adminModal" style="background:transparent!important;border:none!important;box-shadow:none!important;"><div style="background:transparent!important;border:none!important;box-shadow:none!important;">
+<div id="loginBox" style="padding:30px;background:#244226!important;max-width:380px!important;margin:0 auto!important;border:3px solid #dfa932!important;border-radius:20px!important;"><h3 style="color:#ffffff!important;margin-top:0;margin-bottom:20px;text-align:center;font-size:22px;">Login Admin</h3><input id="u" placeholder="Username"><input id="p" type="password" placeholder="Password"><div style="margin-top:25px;display:flex;gap:12px;width:100%;"><button onclick="login()" style="flex:1;padding:10px;font-weight:bold;cursor:pointer;">Login</button><button onclick="closeAdmin()" style="flex:1;padding:10px;font-weight:bold;cursor:pointer;">Tutup</button></div></div>
+<div id="adminBox" class="hidden" style="background-color:#435824!important;max-width:1100px!important;margin:30px auto!important;padding:30px!important;border-radius:20px!important;border:3px solid #dfa932!important;position:relative!important;color:#ffffff!important;">
+<button onclick="closeAdmin()" style="position:absolute!important;top:25px!important;right:25px!important;background:#dc2626!important;color:#fff!important;padding:10px 20px!important;font-weight:bold!important;border-radius:8px!important;">X TUTUP</button><div style="clear:both;margin-bottom:20px;"></div>
+<div class="admin-tabs"><button class="tab-btn tab-kuning active" onclick="switchTab('paket',this)">📦 KELOLA PAKET</button><button class="tab-btn tab-hijau" onclick="switchTab('galeri',this)">🖼️ KELOLA GALERI</button><button class="tab-btn tab-orange" onclick="switchTab('testi',this)">⭐ MODERASI TESTI</button><button class="tab-btn tab-biru" onclick="switchTab('opsi',this)">⚙️ PENGATURAN OPSI</button></div>
+<div id="tab-paket" class="admin-body"><h3>Manajemen Paket Destinasi</h3><input type="hidden" id="editId"><div class="grid-3"><input id="aNama" placeholder="Nama Paket Destinasi Baru *"><div class="flex"><select id="aKategori" class="select-kat"></select><input id="aKategoriBaru" class="input-kat" placeholder="Nama Kategori" style="width:120px"><button class="btn-kat-add small" onclick="addCat()">+ KAT</button><button class="btn-kat-del small" onclick="delCat()">🗑️</button></div><input type="number" id="aHargaPromo" placeholder="Harga Jual Normal (Rp) *"></div>
+<div class="grid-2" style="margin-top:10px">
+<input type="number" id="aHargaCoret" placeholder="Harga Coret / Promo (Rp)">
+<div style="background:#f9fafb;padding:10px;border-radius:10px;border:1px dashed #dfa932;text-align:left">
+<b style="font-size:12px;color:#111">📁 CHOOSE FILE PAKET - GANTI URL LINK BEB</b>
+<input type="file" id="aFile" accept=".jpg,.jpeg,.png,.webp" style="margin-top:6px;padding:6px;background:#fff">
+<input type="hidden" id="aImg">
+<div class="info">Maks 2MB | JPG/PNG/WEBP | JFIF/HEIC ditolak otomatis Beb</div>
+<img id="aPreview" class="preview"><div id="aFileInfo" class="info" style="color:#16a34a"></div>
+</div>
+</div>
+<textarea id="aDesc" placeholder="Uraian rincian destinasi..."></textarea><button class="btn-simpan" onclick="savePaket()">📦 SIMPAN PAKET KE SISTEM</button><table id="adminPaket"></table></div>
+<div id="tab-galeri" class="admin-body hidden"><h3>Manajemen Galeri Foto - INI SLIDER ATAS BEB</h3><input type="hidden" id="editGaleriId"><div class="grid-3"><input id="gNama" placeholder="Nama Galeri / Judul Foto *"><div class="flex"><select id="gKategori" class="select-kat"></select><input id="gKategoriBaru" class="input-kat" placeholder="Nama Kategori" style="width:120px"><button class="btn-kat-add small" onclick="addCatGaleri()">+ KAT</button><button class="btn-kat-del small" onclick="delCatGaleri()">🗑️</button></div>
+<div style="background:#f9fafb;padding:10px;border-radius:10px;border:1px dashed #16a34a;text-align:left">
+<b style="font-size:12px;color:#111">🖼️ CHOOSE FILE GALERI - SLIDER ATAS BEB</b>
+<input type="file" id="gFile" accept=".jpg,.jpeg,.png,.webp" style="margin-top:6px;padding:6px;background:#fff">
+<input type="hidden" id="gImg">
+<div class="info">Maks 2MB - Foto ini muncul di slider Private Tour Beb</div>
+<img id="gPreview" class="preview"><div id="gFileInfo" class="info" style="color:#16a34a"></div>
+</div>
+</div><textarea id="gDesc" placeholder="Uraian / Caption foto..."></textarea><button class="btn-simpan" onclick="saveGaleri()">🖼️ SIMPAN GALERI KE SISTEM</button><table id="adminGaleri"></table></div>
+<div id="tab-testi" class="admin-body hidden"><h3>Moderasi Testimoni</h3><table id="adminTesti"></table></div>
+<div id="tab-opsi" class="admin-body hidden"><h3>Pengaturan Opsi</h3><h4>Kelola Negara</h4><div class="flex"><input id="negaraBaru" placeholder="Nama Negara Baru"><button class="btn-kat-add" onclick="addNegara()">+ TAMBAH</button></div><table id="adminNegara"></table><h4>Kelola Bahasa Driver</h4><div class="flex"><input id="bahasaBaru" placeholder="Nama Bahasa Baru"><button class="btn-kat-add" onclick="addBahasa()">+ TAMBAH</button></div><table id="adminBahasa"></table></div>
+</div>
+</div></div>
+
+<script type="module" src="./config.js"></script>
+<script type="module" src="./paket.js"></script>
+<script type="module" src="./gallery.js"></script>
+<script type="module" src="./booking-testi.js"></script>
+<script type="module" src="./admin-opsi.js"></script>
+
+<script>
+const PRO_KEYS = ["EKSODUS-PRO-2026-BALI","EKSODUS-8888-PRO","BEB-PRO-SELAMANYA-2026","WANDER-PRO-12345"];
+const TRIAL_END_DATE = '2026-09-10T23:59:59'; // UBAH TANGGAL DISINI BEB BUAT TES EXPIRED
+
+function updateTrial(){
+  const badge=document.getElementById('trialBadge');
+  const overlay=document.getElementById('expiredOverlay');
+  const dateInfo=document.getElementById('expiredDateInfo');
+  // CEK PRO DULU BEB
+  if(localStorage.getItem('eksodus_license')==='PRO-AKTIF'){
+    badge.textContent='✅ LICENSE PRO AKTIF - SELAMANYA';
+    badge.style.background='#16a34a'; badge.style.color='#fff';
+    badge.classList.remove('expired');
+    if(overlay){ overlay.style.display='none'; document.body.style.overflow='auto'; }
+    return;
+  }
+  const end=new Date(TRIAL_END_DATE).getTime(); const now=new Date().getTime(); const diff=end-now;
+  if(diff<=0){
+    badge.textContent='TRIAL EXPIRED'; badge.classList.add('expired');
+    if(overlay){ overlay.style.display='flex'; document.body.style.overflow='hidden'; if(dateInfo) dateInfo.innerText='Expired: '+new Date(TRIAL_END_DATE).toLocaleDateString('id-ID'); }
+    return;
+  }
+  const d=Math.floor(diff/86400000), h=Math.floor((diff%86400000)/3600000), m=Math.floor((diff%3600000)/60000), s=Math.floor((diff%60000)/1000);
+  badge.textContent=`SISA TRIAL: ${d} HARI ${h} JAM ${m} MENIT ${s} DETIK`;
+  if(overlay) overlay.style.display='none';
+}
+window.activatePro=()=>{
+  const input=document.getElementById('proKeyInput').value.trim().toUpperCase();
+  const info=document.getElementById('keyInfo');
+  if(PRO_KEYS.includes(input)){
+    localStorage.setItem('eksodus_license','PRO-AKTIF');
+    localStorage.setItem('eksodus_pro_key',input);
+    alert('✅ BERHASIL BEB! Jadi PRO selamanya Beb!');
+    location.reload();
+  }else{
+    info.innerHTML='<span style="color:#dc2626;font-weight:bold">❌ Kode salah Beb!</span>';
+    document.getElementById('proKeyInput').style.borderColor='#dc2626';
+  }
+}
+updateTrial(); setInterval(updateTrial,1000);
+window.setTheme=v=>{ document.body.className=v }
+window.openAdmin=()=>adminModal.style.display='flex';
+window.closeAdmin=()=>adminModal.style.display='none';
+window.switchTab=(id,btn)=>{ document.querySelectorAll('.admin-body').forEach(x=>x.classList.add('hidden')); document.getElementById('tab-'+id).classList.remove('hidden'); document.querySelectorAll('.tab-btn').forEach(x=>x.classList.remove('active')); btn.classList.add('active'); }
+function setupFile(inputId, urlId, previewId, infoId){
+ let inp=document.getElementById(inputId),url=document.getElementById(urlId),prev=document.getElementById(previewId),info=document.getElementById(infoId);
+ if(!inp) return;
+ inp.addEventListener('change',function(){
+  let file=this.files[0];if(!file)return;
+  let ext=file.name.split('.').pop().toLowerCase();
+  if(['jfif','heic','heif','avif'].includes(ext)){alert('❌ Format.'+ext+' tidak didukung Beb!');this.value='';return;}
+  if(file.size>2*1024*1024){alert('❌ Kegedean Beb! Maks 2MB Beb!');this.value='';return;}
+  let reader=new FileReader();
+  reader.onload=e=>{ url.value=e.target.result; prev.src=e.target.result; prev.style.display='block'; if(info) info.innerText='✅ Siap Beb: '+file.name+' | '+(file.size/1024).toFixed(0)+'KB Beb'; };
+  reader.readAsDataURL(file);
+ });
+}
+setupFile('aFile','aImg','aPreview','aFileInfo');
+setupFile('gFile','gImg','gPreview','gFileInfo');
+</script>
+
+<script>
+// CARD SINGKAT + DETAIL FULL BEB
+let curId=null;
+function getList(){ try{ let p=JSON.parse(localStorage.getItem('eksodus_paket')||'[]'); if(p.length) return p; if(window.paketData&&window.paketData.length) return window.paketData; }catch(e){} return []; }
+window.openDetail=(id)=>{ let list=getList(); let it=list.find(x=>x.id==id||x.id==String(id)); if(!it) return; curId=id; document.getElementById('dImg').src=it.img; document.getElementById('dNama').innerText=it.nama; document.getElementById('dKategori').innerHTML='📍 '+(it.kategori||'Bali'); document.getElementById('dCoret').innerText=it.harga_coret?'Rp '+Number(it.harga_coret).toLocaleString('id-ID'):''; document.getElementById('dHarga').innerText='Rp '+Number(it.harga).toLocaleString('id-ID'); document.getElementById('dDesc').innerText=it.desc||''; document.getElementById('detailModal').style.display='flex'; }
+window.closeDetail=()=>document.getElementById('detailModal').style.display='none';
+window.pilihDariDetail=()=>{ let list=getList(); let it=list.find(x=>x.id==curId||x.id==String(curId)); if(it){ closeDetail(); if(window.pilihPaket) pilihPaket(it.nama); } }
+setTimeout(()=>{
+ function renderSingkat(){
+  let grid=document.getElementById('paketGrid'); let filter=document.getElementById('kategoriFilter')?.value||''; let list=getList();
+  if(!grid||!list.length) return;
+  let filtered=filter?list.filter(x=>x.kategori===filter):list;
+  grid.innerHTML='';
+  filtered.forEach(it=>{
+   let short=(it.desc||'').substring(0,70); if((it.desc||'').length>70) short+='...';
+   let coret=it.harga_coret?`<div style="text-decoration:line-through;color:#888;font-size:12px">Rp ${Number(it.harga_coret).toLocaleString('id-ID')}</div>`:'';
+   grid.innerHTML+=`<div class="card"><img src="${it.img}"><div class="card-content"><h3>${it.nama}</h3><div style="color:#555;font-size:12px">📍 ${it.kategori}</div><div style="color:#444;font-size:13px;margin:6px 0;min-height:18px">${short}</div>${coret}<div style="color:#dc2626;font-weight:800;font-size:18px;margin:6px 0">Rp ${Number(it.harga).toLocaleString('id-ID')}</div><button class="btn-detail" onclick="openDetail(${it.id})">🔍 DETAIL</button><button class="btn-pilih" onclick="pilihPaket('${(it.nama||'').replace(/'/g,"\\'")}')">PILIH PAKET</button></div></div>`;
+  });
+ }
+ let orig=window.renderPaket;
+ if(orig){ window.renderPaket=function(){ try{orig();}catch(e){} renderSingkat(); } }
+ renderSingkat();
+ document.getElementById('kategoriFilter')?.addEventListener('change', renderSingkat);
+ setInterval(renderSingkat, 1500);
+}, 800);
+</script>
+</body>
+</html>
